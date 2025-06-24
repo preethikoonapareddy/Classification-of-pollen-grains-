@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict Pollen Type</title>
+</head>
+<body style="background: url('/static/background2.jpg') no-repeat center center fixed;
+             background-size: cover;
+             background-color: #333;
+             color: white;
+             font-family: Arial, sans-serif;
+             text-align: center;
+             padding: 40px;">
+
+    <h1>Upload an Image for Prediction</h1>
+
+    <form action="/result" method="post" enctype="multipart/form-data" style="margin-top: 30px;">
+        <input type="file" name="image" accept="image/*" required 
+               style="padding: 10px; background: #fff; color: black; border-radius: 5px; margin-bottom: 15px;"><br><br>
+        <input type="submit" value="Submit" 
+               style="padding: 10px 20px; background: #ffd700; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
+    </form>
+
+    {% if pred %}
+    <h2 style="margin-top: 40px;">The pollen grain type is <strong style="color: #ffd700;">{{ pred }}</strong></h2>
+    {% endif %}
+
+</body>
+</html>
